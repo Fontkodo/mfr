@@ -1,6 +1,10 @@
 package mfr
 
-import "testing"
+import (
+	"fmt"
+	"strconv"
+	"testing"
+)
 
 func TestMap(t *testing.T) {
 	xs := []int{1, 2, 3, 4, 5}
@@ -10,6 +14,15 @@ func TestMap(t *testing.T) {
 	}
 	for i, x := range xs {
 		if x*x != squares[i] {
+			t.Error()
+		}
+	}
+	stringXs := Map(strconv.Itoa, xs)
+	if len(xs) != len(stringXs) {
+		t.Error("Length of inputs and outputs not equal")
+	}
+	for i, x := range xs {
+		if strconv.Itoa(x) != stringXs[i] {
 			t.Error()
 		}
 	}
@@ -35,6 +48,18 @@ func TestReduce(t *testing.T) {
 	}
 	sum = Reduce(func(x int, y int) int { return x + y }, xs[:1])
 	if sum != 1 {
+		t.Error()
+	}
+	concatenation := Reduce(func(acc string, val int) string { return fmt.Sprintf("%s%d", acc, val) }, xs)
+	if concatenation != "12345" {
+		t.Error()
+	}
+	concatenation = Reduce(func(acc string, val int) string { return fmt.Sprintf("%s%d", acc, val) }, []int{})
+	if concatenation != "" {
+		t.Error()
+	}
+	concatenation = Reduce(func(acc string, val int) string { return fmt.Sprintf("%s%d", acc, val) }, xs[:1])
+	if concatenation != "1" {
 		t.Error()
 	}
 }
