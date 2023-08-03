@@ -1,3 +1,3 @@
-module github.com/Fontkodo/mfr
+module github.com/fontkodo/mfr
 
 go 1.20

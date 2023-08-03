@@ -7,7 +7,7 @@ These would otherwise require for loops in Go.
 - - -
 MIT License
 
-Copyright (c) 2017 Alex Griffin, 
+Copyright (c) 2023 Alex Griffin, 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
