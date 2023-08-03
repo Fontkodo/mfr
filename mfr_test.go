@@ -63,3 +63,20 @@ func TestReduce(t *testing.T) {
 		t.Error()
 	}
 }
+
+func compareSlices[ST comparable](s1 []ST, s2 []ST, t *testing.T) {
+	if len(s1) != len(s2) {
+		t.Error()
+	}
+	for i := range s1 {
+		if s1[i] != s2[i] {
+			t.Error()
+		}
+	}
+}
+
+func TestKeys(t *testing.T) {
+	m := map[string]int{"a": 1, "b": 2}
+	keys := Keys(m)
+	compareSlices[string]([]string{"a", "b"}, keys, t)
+}
