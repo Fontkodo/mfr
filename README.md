@@ -1,4 +1,4 @@
-[![Actions Status CI](https://github.com/Fontkodo/mfr/workflows/CI/badge.svg)](https://github.com/Fontkodo/mfr/actions/workflows/main.yml)
+[![Actions Status CI](https://github.com/Fontkodo/mfr/workflows/mfr/badge.svg)](https://github.com/Fontkodo/mfr/actions/workflows/main.yml)
 
 # mfr
 
