@@ -45,17 +45,3 @@ func Reduce[T1 any, T2 any](f func(T2, T1) T2, items []T1) T2 {
 	}
 	return acc
 }
-
-// Keys from map of T1s to T2s
-//
-// Example
-//
-//	m := map[string]int{ "a": 1, "b": 2 }
-//	keys := Keys(m)
-func Keys[T1 comparable, T2 any](m map[T1]T2) []T1 {
-	keys := make([]T1, 0)
-	for k := range m {
-		keys = append(keys, k)
-	}
-	return keys
-}

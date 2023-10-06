@@ -74,9 +74,3 @@ func compareSlices[ST comparable](s1 []ST, s2 []ST, t *testing.T) {
 		}
 	}
 }
-
-func TestKeys(t *testing.T) {
-	m := map[string]int{"a": 1, "b": 2}
-	keys := Keys(m)
-	compareSlices[string]([]string{"a", "b"}, keys, t)
-}
